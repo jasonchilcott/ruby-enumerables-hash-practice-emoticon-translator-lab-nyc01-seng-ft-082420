@@ -24,11 +24,14 @@ end
 
 
 def get_english_meaning(file_path, emoticon)
-  # code goes here
+  results = 'empty'# code goes here
   load_library(file_path).each do |meaning, emoticons|
     emoticons.each do |language, inner_value|
       #if language is japanese
-      binding.pry
+      if inner_value == emoticon
+        results = meaning
+        binding.pry
+      end
     end
   end
 end
